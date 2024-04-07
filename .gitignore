@@ -11,6 +11,7 @@ hs_err_pid*
 .idea
 .gitignore
 .bsp
+builds
 target
 project/target
 
