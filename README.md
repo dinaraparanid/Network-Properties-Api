@@ -1,4 +1,4 @@
-# Network Properties Calculator
+# Network Properties Api
 
 [![Scala](https://shields.io/badge/scala-3.4.1-red.svg?logo=scala)](https://www.scala-lang.org/)
 
@@ -7,7 +7,7 @@
 
 ## **About App**
 
-**Network Properties Calculator** is a simple web server
+**Network Properties Api** is a simple web server
 that provides all properties of a given IP address
 in a JSON format.
 
