@@ -4,4 +4,5 @@ COPY ./ ./
 
 EXPOSE 1337
 
+RUN sbt test
 ENTRYPOINT ["sbt", "run"]

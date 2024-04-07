@@ -1,5 +1,6 @@
 package com.paranid5.network_addr
 
+import com.paranid5.network_addr.properties.*
 import org.scalatest.funsuite.AnyFunSuite
 
 private val Input:            String = "10.90.137.244/22"
