@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.http4s:http4s-server_3:0.23.26:jar" external-system-id="SBT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-server_3/0.23.26/http4s-server_3-0.23.26.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/org/http4s/http4s-server_3/0.23.26/http4s-server_3-0.23.26-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
