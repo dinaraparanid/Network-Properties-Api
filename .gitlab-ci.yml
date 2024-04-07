@@ -26,7 +26,7 @@ deploy-job:      # This job runs in the deploy stage.
     - CID=$(docker ps -q -f status=running -f name=^/${CONTAINER_NAME}$)
     - if [ ! "${CID}" ]; then
     - echo "Container doesn't exist"
-    - docker run -d -p 1337:1337 --name net-props net-props
+    - docker run -d -p 1337:1337 net-props
     - fi
     - if [ "${CID}" ]; then
     - echo "Container exists"
