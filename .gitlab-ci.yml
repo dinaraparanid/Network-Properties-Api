@@ -32,7 +32,7 @@ deploy-job:      # This job runs in the deploy stage.
     - docker tag net-props paranid5/network_properties:0.0.1
     - docker push paranid5/network_properties:0.0.1
     - echo "Running container..."
-    - docker run -d -p 3000:3000 net-props
+    - docker run -d -p 4000:4000 net-props
     - fi
     - if [ "${CID}" ]; then
     - echo "Container exists"
@@ -43,7 +43,7 @@ deploy-job:      # This job runs in the deploy stage.
     - docker tag net-props paranid5/network_properties:0.0.1
     - docker push paranid5/network_properties:0.0.1
     - echo "Running container..."
-    - docker run -d -p 3000:3000 net-props
+    - docker run -d -p 4000:4000 net-props
     - fi
     - unset CID
     - echo "Application successfully deployed."

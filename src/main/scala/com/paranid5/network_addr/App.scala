@@ -34,7 +34,7 @@ object App extends IOApp:
     EmberServerBuilder
       .default[IO]
       .withHost(ipv4"0.0.0.0")
-      .withPort(port"3000")
+      .withPort(port"4000")
       .withHttpApp(netPropService)
       .build
       .use(_ ⇒ IO.never)
