@@ -27,7 +27,7 @@ deploy-job:      # This job runs in the deploy stage.
     - if [ ! "${CID}" ]; then
     - echo "Container doesn't exist"
     - echo "Publishing container..."
-    - docker tag net-props localhost:3000/network_properties:0.0.1
+    - docker tag net-props paranid5/network_properties:0.0.1
     - docker push paranid5/network_properties:0.0.1
     - echo "Running container..."
     - docker run -d -p 3000:3000 net-props
@@ -38,7 +38,7 @@ deploy-job:      # This job runs in the deploy stage.
     - docker rm net-props -f
     - echo "Creating new container"
     - echo "Publishing container..."
-    - docker tag net-props localhost:3000/network_properties:0.0.1
+    - docker tag net-props paranid5/network_properties:0.0.1
     - docker push paranid5/network_properties:0.0.1
     - echo "Running container..."
     - docker run -d -p 3000:3000 net-props
