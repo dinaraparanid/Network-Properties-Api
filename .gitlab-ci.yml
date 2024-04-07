@@ -1,0 +1,39 @@
+image: sbtscala/scala-sbt:eclipse-temurin-alpine-21.0.2_13_1.9.9_3.4.1
+
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - deploy
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - echo "Building docker image..."
+    - docker build -t net-props .
+
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests..."
+    - sbt test
+
+deploy-job:      # This job runs in the deploy stage.
+  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  environment: production
+  script:
+    - echo "Deploying application..."
+    - CONTAINER_NAME='net-props'
+    - CID=$(docker ps -q -f status=running -f name=^/${CONTAINER_NAME}$)
+    - if [ ! "${CID}" ]; then
+    - echo "Container doesn't exist"
+    - docker run -d -p 1337:1337 --name net-props net-props
+    - fi
+    - if [ "${CID}" ]; then
+    - echo "Container exists"
+    - echo "Removing container"
+    - docker rm net-props -f
+    - echo "Creating new container"
+    - docker run -d -p 1337:1337 --name net-props net-props
+    - fi
+    - unset CID
+    - echo "Application successfully deployed."
