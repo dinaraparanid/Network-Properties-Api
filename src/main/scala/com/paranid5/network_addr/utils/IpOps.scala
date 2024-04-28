@@ -15,8 +15,8 @@ extension (ip: String)
 
     ip.nums map partToBinary mkString ""
 
-  private def combined: Int =
-    Integer.parseInt(ip.toBinary, 2)
+  private def combined: Long =
+    java.lang.Long.parseLong(ip.toBinary, 2)
 
   @targetName("binAnd")
   def #&#(other: String): String =
@@ -38,9 +38,9 @@ extension (ip: String)
   def binDec: String =
     (ip.combined - 1).toIpString
 
-extension (ipInt: Int)
+extension (ipNum: Long)
   private def toIpString =
-    f"${ipInt >> 24}.${(ipInt & 0xFFFFFF) >> 16}.${(ipInt & 0xFFFF) >> 8}.${ipInt & 0xFF}"
+    f"${ipNum >> 24}.${(ipNum & 0xFFFFFF) >> 16}.${(ipNum & 0xFFFF) >> 8}.${ipNum & 0xFF}"
 
 extension (rawIp: String)
   def toIpFormat: String =
